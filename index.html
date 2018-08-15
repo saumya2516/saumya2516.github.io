@@ -29,8 +29,8 @@
     var loadBoards = function() {
       //Get the users boards
       Trello.get(
-        '/members/me/boards/',
-        loadedBoards,
+        'https://trello.com/b/CDMDLAcw/daily-work',
+        function() { console.log("Success to load boards"); },
         function() { console.log("Failed to load boards"); }
       );
     };
