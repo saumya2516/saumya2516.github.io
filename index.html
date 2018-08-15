@@ -6,15 +6,19 @@
   <body>
     <div class="container">
       <h1>Trello Dashboard</h1>
-       <form class="form-horizontal" id="boards_form">
+
+      <form class="form-horizontal" id="boards_form">
         <div class="form-group">
           <label class="control-label">Choose your board</label>
             <select class="form-control" id="boards"></select>
         </div>
       </form>
+      
+      <div id="labels"></div>
     </div> 
   </body>
-   <script src="http://code.jquery.com/jquery-1.11.3.min.js" type="text/javascript"></script>
+
+  <script src="http://code.jquery.com/jquery-1.11.3.min.js" type="text/javascript"></script>
   <script src="https://api.trello.com/1/client.js?key=726d81e0e0aef5097ea6739fd5f47e5e"></script>
   
   <script type="text/javascript">
@@ -29,11 +33,28 @@
     var loadBoards = function() {
       //Get the users boards
       Trello.get(
-        'https://trello.com/b/CDMDLAcw/daily-work',
-        function() { console.log("Success to load boards"); },
+        '/members/me/boards/',
+        loadedBoards,
         function() { console.log("Failed to load boards"); }
       );
     };
+    
+    var loadedLabels = function(labels) {
+      $.each(labels, function(index, label) {
+        var label = $("<p><span class='badge' style='background:" + label.color + ";'>" + label.uses + "</span> " + label.name + "</p>");
+        $('#labels').append(label)
+      });
+    };
+    $('#boards').change(function() {
+      var boardId = $("option:selected", this).val();
+      $('#labels').empty();
+      
+      Trello.get(
+        '/boards/' + boardId + '/labels',
+        loadedLabels,
+        function() { console.log("Failed to load labels"); }
+      );
+    });
     
     Trello.authorize({
       type: "popup",
