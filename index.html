@@ -45,16 +45,13 @@
         $('#labels').append(label)
       });
     };
-    $('#boards').change(function() {
-      var boardId = $("option:selected", this).val();
-      $('#labels').empty();
-      
+    
       Trello.get(
-        '/boards/' + boardId + '/labels',
+        '/boards/CDMDLAcw/labels',
         loadedLabels,
         function() { console.log("Failed to load labels"); }
       );
-    });
+    
     
     Trello.authorize({
       type: "popup",
