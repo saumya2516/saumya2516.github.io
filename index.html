@@ -22,13 +22,14 @@
   <script src="https://api.trello.com/1/client.js?key=726d81e0e0aef5097ea6739fd5f47e5e"></script>
   
   <script type="text/javascript">
-    var loadedBoards = function(boards) {debugger
-      $.each(boards, function(index, value) {
-        $('#boards')
-          .append($("<option></option>")
-          .attr("value",value.id)
-          .text(value.name)); 
-      });
+    var loadedBoards = function(boards) {
+	console.log(boards);
+      //$.each(boards, function(index, value) {
+       // $('#boards')
+       //   .append($("<option></option>")
+        //  .attr("value",value.id)
+         // .text(value.name)); 
+     // });
     };
     var loadBoards = function() {
       //Get the users boards
