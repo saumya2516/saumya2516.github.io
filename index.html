@@ -1,11 +1,11 @@
 <html>
   <head>
-    <title>saumya</title>
+    <title>A Trello Dashboard</title>
     <link rel="stylesheet" media="screen" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   </head>
   <body>
     <div class="container">
-      <h1>saumya tripathi</h1>
+      <h1>Trello Dashboard</h1>
 
       <form class="form-horizontal" id="boards_form">
         <div class="form-group">
@@ -23,14 +23,12 @@
   
   <script type="text/javascript">
     var loadedBoards = function(boards) {
-	
       $.each(boards, function(index, value) {
-	console.log(index);
-       // $('#boards')
-       //   .append($("<option></option>")
-        //  .attr("value",value.id)
-         // .text(value.name)); 
-     });
+        $('#boards')
+          .append($("<option></option>")
+          .attr("value",value.id)
+          .text(value.name)); 
+      });
     };
     var loadBoards = function() {
       //Get the users boards
@@ -47,10 +45,29 @@
         $('#labels').append(label)
       });
     };
-   
+    $('#boards').change(function() {
+      var boardId = $("option:selected", this).val();
+      $('#labels').empty();
+      
+      Trello.get(
+        '/boards/' + boardId + '/labels',
+        loadedLabels,
+        function() { console.log("Failed to load labels"); }
+      );
+    });
     
     Trello.authorize({
       type: "popup",
+      name: "Trello dashboard",
+      scope: {
+        read: true,
+        write: false },
+      expiration: "never",
+      success: loadBoards,
+      error: function() { console.log("Failed authentication"); }
+    });
+  </script>
+</html>
       name: "Trello dashboard",
       scope: {
         read: true,
