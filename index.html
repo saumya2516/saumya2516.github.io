@@ -22,7 +22,7 @@
   <script src="https://api.trello.com/1/client.js?key=726d81e0e0aef5097ea6739fd5f47e5e"></script>
   
   <script type="text/javascript">
-    var loadedBoards = function(boards) {
+    var loadedBoards = function(boards) {debugger
       $.each(boards, function(index, value) {
         $('#boards')
           .append($("<option></option>")
@@ -45,13 +45,7 @@
         $('#labels').append(label)
       });
     };
-    
-      Trello.get(
-        '/boards/CDMDLAcw/labels',
-        loadedLabels,
-        function() { console.log("Failed to load labels"); }
-      );
-    
+   
     
     Trello.authorize({
       type: "popup",
