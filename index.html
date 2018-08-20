@@ -1,11 +1,11 @@
 <html>
   <head>
-    <title>Saumiyaaa</title>
+    <title>A Trello Dashboard</title>
     <link rel="stylesheet" media="screen" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <script type="text/javascript">
         var loadedBoards = function(boards) {
           angular.forEach(boards,function(index , value){
-            angular.element('#boards')
+            angular.element(document.querySelector('#boards'))
             .append($("<option></option>")
               .attr("value",value.id)
               .text(value.name));
@@ -22,7 +22,7 @@
   </head>
   <body>
     <div class="container">
-      <h1>Saumiyaaa</h1>
+      <h1>Personal Trello Dashboard</h1>
        <form class="form-horizontal" id="boards_form">
         <div class="form-group">
           <label class="control-label">Choose your board</label>
