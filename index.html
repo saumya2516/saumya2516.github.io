@@ -15,15 +15,16 @@
 	</div>
 </div>
 <script>
-	 var loadedBoards = function(boards[2]) {debugger
-	
-	}   		
+var loadedBoards = function(boards) {debugger
+	console.log(boards);
+}
+
  </script>
 <script type="text/javascript">
     var loadBoards = function() {
       //Get the users boards
       Trello.get(
-        '/members/me/boards/',
+        '/members/me/boards/5b75e2a2e18a957e3a7294fb',
         loadedBoards,
         function() { console.log("Failed to load boards"); }
       );
