@@ -6,7 +6,7 @@
     <script type="text/javascript">
         var loadedBoards = function(boards) {
           angular.forEach(boards,function(index , value){
-            console.log(angular.element(document.querySelector('#boards')));
+            angular.element(document.querySelector('#boards'))
             .append($("<option></option>")
             .attr("value",value.id)
             .text(value.name));
