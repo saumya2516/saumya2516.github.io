@@ -1,4 +1,4 @@
-<html>
+<html ng-app="myApp">
   <head>
     <title>A Trello Dashboard</title>
     <link rel="stylesheet" media="screen" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -7,16 +7,16 @@
 	var loadedBoards = function(boards) {
 	angular.forEach(boards,function(value, index){
 	    var app = angular.module('myApp', []);
-	    app.controller('myCtrl' , ['$scope',function($scope){
+	    app.controller('myCtrl',function($scope){
 		$scope.name = value.name
-	    }]);
+	    });
 	});
 	}
     </script>
   </head>
   <body>
     <div class="container">
-      <h1>Trello Dashboard</h1>
+      <h1>My Trello Dashboard</h1>
        <form class="form-horizontal" id="boards_form">
         <div ng-app="myApp" ng-controller="myCtrl">
           <label class="control-label">Choose your board</label>
