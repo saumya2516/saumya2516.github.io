@@ -5,11 +5,12 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     <script type="text/javascript">
 	var loadedBoards = function(boards) {
-	angular.forEach(boards,function(name){
-	    var app = angular.module('myApp', []);
-	    app.controller('myCtrl' , function($scope){
-		console.log(name);
-	});
+	angular.forEach(boards,function(index, value){
+		console.log(index);
+	    //var app = angular.module('myApp', []);
+	    //app.controller('myCtrl' , function($scope){
+		//console.log(index);
+	//});
 	});
 	}
 
@@ -18,7 +19,7 @@
   </head>
   <body>
     <div class="container">
-      <h1>My Trello Dashboard</h1>
+      <h1>Trello Dashboard</h1>
        <form class="form-horizontal" id="boards_form">
         <div ng-app="myApp" ng-controller="myCtrl">
           <label class="control-label">Choose your board</label>
