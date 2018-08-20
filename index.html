@@ -6,12 +6,10 @@
     <script type="text/javascript">
 	var loadedBoards = function(boards) {
 	angular.forEach(boards,function(value, index){
-		console.log(index);
-		console.log(value.name);
 	    var app = angular.module('myApp', []);
 	    app.controller('myCtrl' , function($scope){
 		$scope.name = value.name
-	});
+	    });
 	});
 	}
 
@@ -24,7 +22,7 @@
        <form class="form-horizontal" id="boards_form">
         <div ng-app="myApp" ng-controller="myCtrl">
           <label class="control-label">Choose your board</label>
-            <select ng-model="selectedName" ng-options= "name"></select>
+            <select ng-model="selectedName" ng-options= "x for x in name"></select>
         </div>
       </form>
     </div> 
