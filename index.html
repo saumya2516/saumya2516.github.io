@@ -5,10 +5,10 @@
     <script type="text/javascript">
         var loadedBoards = function(boards) {
           angular.forEach(boards,function(index , value){
-            angular.element(document.querySelector('#boards'))
-            .append($("<option></option>")
-              .attr("value",value.id)
-              .text(value.name));
+            console.log(angular.element(document.querySelector('#boards')));
+           // .append($("<option></option>")
+           //   .attr("value",value.id)
+            //  .text(value.name));
           })
           ///////////////////////////
           //$.each(boards, function(index, value) {
