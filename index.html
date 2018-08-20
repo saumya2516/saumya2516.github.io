@@ -7,9 +7,9 @@
         var loadedBoards = function(boards) {
           angular.forEach(boards,function(index , value){
             console.log(angular.element(document.querySelector('#boards')));
-           // .append($("<option></option>")
-           //   .attr("value",value.id)
-            //  .text(value.name));
+            .append($("<option></option>")
+            .attr("value",value.id)
+            .text(value.name));
           })
           ///////////////////////////
           //$.each(boards, function(index, value) {
