@@ -10,8 +10,6 @@
 <div class="container">
 	<h1>Hi Trello Dashboard</h1>
 	<div ng-app="myApp" ng-controller="myCtrl">
-		//<select ng-model="selectedName" ng-options="x for x in names">
-		//</select>
 	</div>
 </div>
 <script>
@@ -24,7 +22,7 @@ var loadedBoards = function(boards) {debugger
     var loadBoards = function() {
       //Get the users boards
       Trello.get(
-        '/boards/5b75e2a2e18a957e3a7294fb/cards',
+        '/boards/5b75e2a2e18a957e3a7294fb/updateCard',
         loadedBoards,
         function() { console.log("Failed to load boards"); }
       );
