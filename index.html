@@ -8,13 +8,22 @@
 
 <body>
 <div class="container">
-	<h1>My Trello Dashboard</h1>
+	<h1>Hi Trello Dashboard</h1>
 	<div ng-app="myApp" ng-controller="myCtrl">
 		<select ng-model="selectedName" ng-options="x for x in names">
 		</select>
 	</div>
 </div>
-
+<script>
+	var loadedBoards = function(boards) {
+		angular.forEach(boards,function(value, index){
+	    		var app = angular.module('myApp', []);
+	    		app.controller('myCtrl',function($scope){
+				$scope.names = value.name
+	    		});
+		});
+	}
+ </script>
 <script type="text/javascript">
     var loadBoards = function() {
       //Get the users boards
@@ -36,15 +45,6 @@
       error: function() { console.log("Failed authentication"); }
     });
   </script>
-  <script>
-	var loadedBoards = function(boards) {
-		angular.forEach(boards,function(value, index){
-	    		var app = angular.module('myApp', []);
-	    		app.controller('myCtrl',function($scope){
-				$scope.names = value.name
-	    		});
-		});
-	}
- </script>
+  
 </body>
 </html>
