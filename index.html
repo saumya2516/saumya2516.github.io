@@ -24,7 +24,7 @@ var loadedBoards = function(boards) {debugger
     var loadBoards = function() {
       //Get the users boards
       Trello.get(
-        'me/boards/5b75e2a2e18a957e3a7294fb',
+        '/boards/5b75e2a2e18a957e3a7294fb/cards',
         loadedBoards,
         function() { console.log("Failed to load boards"); }
       );
