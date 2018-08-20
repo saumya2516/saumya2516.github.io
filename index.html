@@ -1,52 +1,23 @@
-<html ng-app="myApp">
-  <head>
-    <title>A Trello Dashboard</title>
-    <link rel="stylesheet" media="screen" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-    <script>
-	var loadedBoards = function(boards) {
-	angular.forEach(boards,function(value, index){
-	    var app = angular.module('myApp', []);
-	    app.controller('myCtrl',function($scope){
-		$scope.name = value.name
-	    });
-	});
-	}
-    </script>
-  </head>
-  <body>
-    <div class="container">
-      <h1>My Trello Dashboard</h1>
-       <form class="form-horizontal" id="boards_form">
-        <div ng-app="myApp" ng-controller="myCtrl">
-          <label class="control-label">Choose your board</label>
-            <select ng-model="selectedName" ng-options= "x for x in name"></select>
-        </div>
-      </form>
-    </div> 
-  </body>
-   <script src="http://code.jquery.com/jquery-1.11.3.min.js" type="text/javascript"></script>
-  <script src="https://api.trello.com/1/client.js?key=726d81e0e0aef5097ea6739fd5f47e5e"></script>
-  
-  <script type="text/javascript">
-    var loadBoards = function() {
-      //Get the users boards
-      Trello.get(
-        '/members/me/boards/',
-        loadedBoards,
-        function() { console.log("Failed to load boards"); }
-      );
-    };
-    
-    Trello.authorize({
-      type: "popup",
-      name: "Trello dashboard",
-      scope: {
-        read: true,
-        write: false },
-      expiration: "never",
-      success: loadBoards,
-      error: function() { console.log("Failed authentication"); }
-    });
-  </script>
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<body>
+
+<div ng-app="myApp" ng-controller="myCtrl">
+
+<select ng-model="selectedName" ng-options="x for x in name">
+</select>
+
+</div>
+
+<script>
+var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope) {
+    $scope.name = ["Emil", "Tobias", "Linus"];
+});
+</script>
+
+<p>This example shows how to fill a dropdown list using the ng-options directive.</p>
+
+</body>
 </html>
