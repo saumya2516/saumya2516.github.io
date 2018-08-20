@@ -5,12 +5,13 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     <script type="text/javascript">
 	var loadedBoards = function(boards) {
-	angular.forEach(boards,function(index, value){
+	angular.forEach(boards,function(value, index){
 		console.log(index);
-	    //var app = angular.module('myApp', []);
-	    //app.controller('myCtrl' , function($scope){
-		//console.log(index);
-	//});
+		console.log(value.name);
+	    var app = angular.module('myApp', []);
+	    app.controller('myCtrl' , function($scope){
+		$scope.name = value.name
+	});
 	});
 	}
 
