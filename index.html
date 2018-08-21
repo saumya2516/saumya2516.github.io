@@ -14,16 +14,18 @@
 </div>
 <script>
 
-var loadedActions = function(actions) {debugger
-
+var loadedActions = function(actions) {
+angular.forEach(actions , function (value,key) {debugger
+	
+});	
 }
-var loadedBoards = function(cards) {debugger
+var loadedBoards = function(lists) {debugger
 	angular.forEach(cards.cards , function (value,key) {
 		var str = value.id;
 		var res = str.replace(/"/g, '');
                 var baseUrl = '/cards/';
 		var postUrl = '/actions/';
-		console.log(baseUrl+res+postUrl);
+		
 		Trello.get(
         	baseUrl+res+postUrl,
         loadedActions,
@@ -37,7 +39,7 @@ var loadedBoards = function(cards) {debugger
     var loadBoards = function() {
       //Get the users boards
       Trello.get(
-        'boards/5b75e2a2e18a957e3a7294fb?cards=all',
+        'boards/5b75e2a2e18a957e3a7294fb/lists',
         loadedBoards,
         function() { console.log("Failed to load boards"); }
       );
