@@ -15,7 +15,12 @@
 <script>
 var loadedBoards = function(cards) {debugger
 	angular.forEach(cards.cards , function (value,key) {
-		console.log(value);
+		var cardId = value.id;
+		Trello.get(
+        'boards/cardId/actions',
+        function() {console.log("success to to load boards");},
+        function() { console.log("Failed to load boards"); }
+      );
 	});
 }
 
