@@ -12,15 +12,13 @@
 	<canvas id="myChart" width="1600" height="900"></canvas>
 </div>
 <script>
-var listName;
+var listNameArray = [];
 var loadedActions = function(cards) {debugger
  cardNameArray = [];
- listNameArray = [];
+
 angular.forEach(cards , function (value,key) {debugger
 	var cardName = value.name;
-	var listNameValue = listName;
 	cardNameArray.push(cardName);
-	listNameArray.push(listNameValue);
 });
 var ctx = document.getElementById("myChart");
 var myChart = new Chart(ctx, {
@@ -39,7 +37,8 @@ var myChart = new Chart(ctx, {
 var loadedBoards = function(lists) {debugger
 	angular.forEach(lists , function (value,key) {
 		var str = value.id;
-		listName= value.name;
+		var listName= value.name;
+		listNameArray.push(listName);
 		var res = str.replace(/"/g, '');
                 var baseUrl = '/lists/';
 		var postUrl = '/cards/';
