@@ -20,13 +20,17 @@
 </div>
 <script>
 var listNameArray = [];
-var loadedActions = function(cards) {debugger
  var cardNameArray = [];
+var loadedActions = function(cards) {debugger
+
 
 angular.forEach(cards , function (value,key) {debugger
 	var cardName = value.name;
 	cardNameArray.push(cardName);
 });
+
+}
+
 var config = {
 			type: 'line',
 			data: {
@@ -71,7 +75,6 @@ var config = {
 			var ctx = document.getElementById('canvas').getContext('2d');
 			window.myLine = new Chart(ctx, config);
 		};
-}
 
 var loadedBoards = function(lists) {debugger
 	angular.forEach(lists , function (value,key) {
