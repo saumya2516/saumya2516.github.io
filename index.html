@@ -10,7 +10,6 @@
 <body>
 <div class="container">
 	<canvas id="myChart" width="1600" height="900"></canvas>
-	
 </div>
 <script>
 
@@ -36,21 +35,23 @@ var myChart = new Chart(ctx, {
   }
 });	
 }
+
 var loadedBoards = function(lists) {debugger
 	angular.forEach(lists , function (value,key) {
 		var str = value.id;
 		var listName= value.name;
 		var res = str.replace(/"/g, '');
                 var baseUrl = '/lists/';
-		var postUrl = '/actions/';
+		var postUrl = '/cards/';
 		
 		Trello.get(
-        	baseUrl+res+postUrl,
-        loadedActions(),
-        function() { console.log("Failed to load boards"); }
-      );
+        		baseUrl+res+postUrl,
+        		loadedActions,
+        		function() { console.log("Failed to load boards"); }
+      		);
 	});
 }
+
 </script>
 
 <script type="text/javascript">
