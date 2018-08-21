@@ -14,7 +14,7 @@
 </div>
 <script>
 
-var loadedActions = function(listName,cards) {debugger
+var loadedActions = function(cards) {debugger
  cardNameArray = [];
  listNameArray = [];
 angular.forEach(cards , function (value,key) {debugger
@@ -46,7 +46,7 @@ var loadedBoards = function(lists) {debugger
 		
 		Trello.get(
         	baseUrl+res+postUrl,
-        loadedActions(listName),
+        loadedActions(),
         function() { console.log("Failed to load boards"); }
       );
 	});
