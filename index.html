@@ -12,15 +12,15 @@
 	<canvas id="myChart" width="1600" height="900"></canvas>
 </div>
 <script>
-
+var listName;
 var loadedActions = function(cards) {debugger
  cardNameArray = [];
  listNameArray = [];
 angular.forEach(cards , function (value,key) {debugger
 	var cardName = value.name;
-	var listName = listName;
+	var listNameValue = listName;
 	cardNameArray.push(cardName);
-	listNameArray.push(listName);
+	listNameArray.push(listNameValue);
 });
 var ctx = document.getElementById("myChart");
 var myChart = new Chart(ctx, {
