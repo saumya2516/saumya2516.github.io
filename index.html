@@ -31,6 +31,24 @@ angular.forEach(cards , function (value,key) {debugger
 
 }
 
+
+
+var loadedBoards = function(lists) {debugger
+	angular.forEach(lists , function (value,key) {
+		var str = value.id;
+		var listName= value.name;
+		listNameArray.push(listName);
+		var res = str.replace(/"/g, '');
+                var baseUrl = '/lists/';
+		var postUrl = '/cards/';
+		
+		Trello.get(
+        		baseUrl+res+postUrl,
+        		loadedActions,
+        		function() { console.log("Failed to load boards"); }
+      		);
+	});
+
 var config = {
 			type: 'line',
 			data: {
@@ -75,22 +93,6 @@ var config = {
 			var ctx = document.getElementById('canvas').getContext('2d');
 			window.myLine = new Chart(ctx, config);
 		};
-
-var loadedBoards = function(lists) {debugger
-	angular.forEach(lists , function (value,key) {
-		var str = value.id;
-		var listName= value.name;
-		listNameArray.push(listName);
-		var res = str.replace(/"/g, '');
-                var baseUrl = '/lists/';
-		var postUrl = '/cards/';
-		
-		Trello.get(
-        		baseUrl+res+postUrl,
-        		loadedActions,
-        		function() { console.log("Failed to load boards"); }
-      		);
-	});
 }
 
 </script>
