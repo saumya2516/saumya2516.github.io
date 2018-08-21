@@ -14,17 +14,17 @@
 </div>
 <script>
 
-var loadedActions = function(actions) {
+var loadedActions = function(actions) {debugger
 angular.forEach(actions , function (value,key) {debugger
 	
 });	
 }
 var loadedBoards = function(lists) {debugger
-	angular.forEach(cards.cards , function (value,key) {
+	angular.forEach(lists , function (value,key) {
 		var str = value.id;
 		var res = str.replace(/"/g, '');
-                var baseUrl = '/cards/';
-		var postUrl = '/actions/';
+                var baseUrl = '/lists/';
+		var postUrl = '/cards/';
 		
 		Trello.get(
         	baseUrl+res+postUrl,
