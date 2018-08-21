@@ -42,7 +42,7 @@ var loadedBoards = function(lists) {debugger
 		var listName= value.name;
 		var res = str.replace(/"/g, '');
                 var baseUrl = '/lists/';
-		var postUrl = '/cards/';
+		var postUrl = '/actions/';
 		
 		Trello.get(
         	baseUrl+res+postUrl,
