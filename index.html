@@ -46,37 +46,6 @@ var myLine = new Chart(ctx, {
       fill: false,
       showLine: false,
     }]
-  },
-  options: {
-    responsive: true,
-    title:{
-      display: true,
-      text: 'Chart.js - Non Numeric X and Y Axis'
-    },
-    legend: {
-      display: false
-    },
-    scales: {
-      xAxes: [{
-        display: true,
-        scaleLabel: {
-          display: true,
-          labelString: 'Month'
-        }
-      }],
-      yAxes: [{
-        type: 'category',
-        position: 'left',
-        display: true,
-        scaleLabel: {
-          display: true,
-          labelString: 'Request State'
-        },
-        ticks: {
-          reverse: true
-        },
-      }]
-    }
   }
 });
 }
@@ -98,6 +67,27 @@ var loadedBoards = function(lists) {debugger
         		function() { console.log("Failed to load boards"); }
       		);
 	});
+
+	new Chart(document.getElementById("bar-chart"), {
+    type: 'bar',
+    data: {
+      labels: ["Africa", "Asia", "Europe", "Latin America", "North America"],
+      datasets: [
+        {
+          label: "Population (millions)",
+          backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
+          data: [2478,5267,734,784,433]
+        }
+      ]
+    },
+    options: {
+      legend: { display: false },
+      title: {
+        display: true,
+        text: 'Predicted world population (millions) in 2050'
+      }
+    }
+});
 
 
 }
