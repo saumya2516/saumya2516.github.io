@@ -16,7 +16,7 @@
 
 <body>
 <div class="container">
-	<canvas id="canvas" width="1600" height="900"></canvas>
+	<canvas id="bar-chart" width="800" height="450"></canvas>
 </div>
 <script>
 var listNameArray = [];
@@ -30,25 +30,26 @@ var loadedActions = function(cards) {debugger
 	});
 	var ctx = document.getElementById("canvas").getContext("2d");
 
-var myLine = new Chart(ctx, {
-  type: 'line',
-  data: {
-    xLabels: listNameArray,
-    yLabels: cardNameArray,
-    datasets: [{
-      label: "My First dataset",
-      data: ['Request Added', 'Request Viewed', 'Request Added'],
-      fill: false,
-      showLine: false,
-    }, {
-      label: "My First dataset",
-      data: [null, 'Request Accepted', 'Request Accepted'],
-      fill: false,
-      showLine: false,
-    }]
-  }
+new Chart(document.getElementById("bar-chart"), {
+    type: 'bar',
+    data: {
+      labels: ["Africa", "Asia", "Europe", "Latin America", "North America"],
+      datasets: [
+        {
+          label: "Population (millions)",
+          backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
+          data: [2478,5267,734,784,433]
+        }
+      ]
+    },
+    options: {
+      legend: { display: false },
+      title: {
+        display: true,
+        text: 'Predicted world population (millions) in 2050'
+      }
+    }
 });
-}
 
 
 
