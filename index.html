@@ -30,7 +30,8 @@ var loadedActions = function(cards) {debugger
 	new Chart(document.getElementById("bar-chart"), {
         	type: 'bar',
     		data: {
-      			labels: cardNameArray,
+      			xLabels: cardNameArray,
+			yLabels: listNameArray,
       			datasets: [
         			{
           				label: "Population (millions)",
