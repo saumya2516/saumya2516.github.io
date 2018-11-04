@@ -15,8 +15,11 @@
 <script>
 var listNameArray = [];
 var cardNameArray = [];
-var loadedActions = function(cards) {debugger
-	angular.forEach(cards , function (value,key) {debugger
+var loadedActions = function(cards) {
+	angular.forEach(cards , function (value,key) {
+		<div>
+			<html> saumya </html>
+		</div>
 		var cardName = value.name;
 		cardNameArray.push(cardName);
 	});
@@ -45,7 +48,7 @@ var loadedActions = function(cards) {debugger
 
 }
 
-var loadedBoards = function(lists) {debugger
+var loadedBoards = function(lists) {
 	angular.forEach(lists , function (value,key) {
 		var str = value.id;
 		var listName= value.name;
