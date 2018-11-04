@@ -17,12 +17,11 @@ var listNameArray = [];
 var cardNameArray = [];
 var loadedActions = function(cards) {
 	angular.forEach(cards , function (value,key) {
-		<div>
-			<html> saumya </html>
-		</div>
 		var cardName = value.name;
 		cardNameArray.push(cardName);
 	});
+	<div id="card"></div>
+	document.getElementById('card').innerHTML = cardNameArray;
 	
 	/**
 	new Chart(document.getElementById("bar-chart"), {
