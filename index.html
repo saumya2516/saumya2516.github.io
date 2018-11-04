@@ -12,6 +12,7 @@
 <div class="container">
 	<canvas id="bar-chart" width="800" height="450"></canvas>
 </div>
+<div id = "card"> </div>
 <script>
 var listNameArray = [];
 var cardNameArray = [];
@@ -20,7 +21,7 @@ var loadedActions = function(cards) {
 		var cardName = value.name;
 		cardNameArray.push(cardName);
 	});
-	<div id="card"></div>
+	
 	document.getElementById('card').innerHTML = cardNameArray;
 	
 	/**
