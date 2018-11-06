@@ -20,13 +20,29 @@
 var loadedActions = function(cards) {
 	
 	angular.forEach(cards , function (value,key) {
+		var list;
+		switch(value.idList) {
+			case 5b20f2203ce6409d919b7281 : 
+				list = Voided;
+				break;
+			case 5b20f1177994c475a10be920 : 
+				list = Creating;
+				break;
+			case 5b20f138528ff7918365a5b7 : 
+				list = RTL;
+				break;
+			case 5b20f15424b0c9eafe53aa8b : 
+				list = Live;
+				break;
+
+		}
 		var iDiv = document.createElement('div');
 		var cardName = document.createElement("h3");
 		var node1 = document.createTextNode(value.name);
 		cardName.appendChild(node1);
 
-		var listName = document.createElement("h3");
-		var node2 = document.createTextNode(value.idList);
+		var listName = document.createElement("h4");
+		var node2 = document.createTextNode(list);
 		cardName.appendChild(node2); 
 
 		iDiv.appendChild(cardName);
