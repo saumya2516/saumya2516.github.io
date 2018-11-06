@@ -25,7 +25,10 @@ tr:nth-child(even) {
 }
 </style>
 <body>
-	
+	<table id = table>
+		<th> Release name </th>
+		<th> Status </th>
+	</table>
 
 <script>
 
@@ -48,7 +51,7 @@ var loadedActions = function(cards) {
 				break;
 
 		}
-		var iDiv = document.createElement('table');
+		var iDiv = document.getElementById('table');
 		var cardName = document.createElement("tr");
 		var first = document.createElement("td");
 		var node1 = document.createTextNode(value.name);
