@@ -7,49 +7,39 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
 	
 </head>
-
+<style>
+	.box-container {
+		display : flex;
+	}
+</style>
 <body>
-<div class="container">
-	<canvas id="bar-chart" width="800" height="450"></canvas>
-</div>
-<div id = "card"> </div>
+	
+
 <script>
-var listNameArray = [];
-var cardNameArray = [];
+
 var loadedActions = function(cards) {
+	
 	angular.forEach(cards , function (value,key) {
-		var cardName = value.name;
-		cardNameArray.push(cardName);
+		var iDiv = document.createElement('div');
+		var cardName = document.createElement("h3");
+		var node1 = document.createTextNode(value.name);
+		cardName.appendChild(node1);
+
+		var listName = document.createElement("h3");
+		var node2 = document.createTextNode(value.idList);
+		cardName.appendChild(node2); 
+
+		iDiv.appendChild(cardName);
+		iDiv.appendChild(listName);
+		iDiv.className = 'box-container';
+		document.getElementsByTagName('body')[0].appendChild(iDiv);
+		
 	});
 	
-	document.getElementById('card').innerHTML = cardNameArray;
 	
-	/**
-	new Chart(document.getElementById("bar-chart"), {
-        	type: 'bar',
-    		data: {
-      			xLabels: cardNameArray,
-			yLabels: listNameArray,
-      			datasets: [
-        			{
-          				label: "Population (millions)",
-          				backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
-          				data: ['Request Added', 'Request Viewed', 'Request Added']
-        			}
-      			]
-    		},
-    		options: {
-      			legend: { display: false },
-      			title: {
-        			display: true,
-        			text: 'brexit means brexit'
-      			}
-    		}
-	});
-	**/
 }
 
-var loadedBoards = function(lists) {
+var loadedBoards = function(lists) {debugger
 	angular.forEach(lists , function (value,key) {
 		var str = value.id;
 		var listName= value.name;
@@ -90,6 +80,6 @@ var loadedBoards = function(lists) {
       error: function() { console.log("Failed authentication"); }
     });
   </script>
-  
-</body>
+ </body> 
+
 </html>
