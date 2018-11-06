@@ -8,17 +8,21 @@
 	
 </head>
 <style>
-	.box-container {
-		display : flex;
-	}
+	table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
 
-	h3 {
-		background-color : green;
-	}
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
 
-	h4 {
-		background-color : pink;
-	}
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
 </style>
 <body>
 	
@@ -44,17 +48,19 @@ var loadedActions = function(cards) {
 				break;
 
 		}
-		var iDiv = document.createElement('div');
-		var cardName = document.createElement("h3");
+		var iDiv = document.createElement('table');
+		var cardName = document.createElement("tr");
+		var first = document.createElement("td");
 		var node1 = document.createTextNode(value.name);
-		cardName.appendChild(node1);
+		first.appendChild(node1);
+		cardName.appendChild(first);
 
-		var listName = document.createElement("h4");
+		var listName = document.createElement("td");
 		var node2 = document.createTextNode(list);
-		cardName.appendChild(node2); 
+		listName.appendChild(node2); 
+		cardName.appendChild(listName);
 
 		iDiv.appendChild(cardName);
-		iDiv.appendChild(listName);
 		iDiv.className = 'box-container';
 		document.getElementsByTagName('body')[0].appendChild(iDiv);
 		
