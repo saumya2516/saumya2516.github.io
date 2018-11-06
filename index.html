@@ -43,7 +43,6 @@ var loadedBoards = function(lists) {debugger
 	angular.forEach(lists , function (value,key) {
 		var str = value.id;
 		var listName= value.name;
-		listNameArray.push(listName);
 		var res = str.replace(/"/g, '');
                 var baseUrl = '/lists/';
 		var postUrl = '/cards/';
