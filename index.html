@@ -3,12 +3,11 @@
 <head>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 	<script src="http://code.jquery.com/jquery-1.11.3.min.js" type="text/javascript"></script>
-  	<script src="https://api.trello.com/1/client.js?key=726d81e0e0aef5097ea6739fd5f47e5e"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+  	<script src="https://api.trello.com/1/client.js?key=726d81e0e0aef5097ea6739fd5f47e5e"></script
 	
 </head>
 <style>
-	table {
+table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
     width: 100%;
@@ -30,6 +29,7 @@ td {
 tr:nth-child(even) {
     background-color: #dddddd;
 }
+
 </style>
 <body>
 	<table id = table>
@@ -37,7 +37,7 @@ tr:nth-child(even) {
 		<th> Status </th>
 	</table>
 
-<script>
+<script type="text/javascript">
 
 var loadedActions = function(cards) {
 	
@@ -79,7 +79,7 @@ var loadedActions = function(cards) {
 	
 }
 
-var loadedBoards = function(lists) {debugger
+var loadedBoards = function(lists) {
 	angular.forEach(lists , function (value,key) {
 		var str = value.id;
 		var listName= value.name;
@@ -96,9 +96,7 @@ var loadedBoards = function(lists) {debugger
 
 }
 
-</script>
 
-<script type="text/javascript">
     var loadBoards = function() {
       //Get the users boards
       Trello.get(
@@ -118,6 +116,7 @@ var loadedBoards = function(lists) {debugger
       success: loadBoards,
       error: function() { console.log("Failed authentication"); }
     });
+
   </script>
  </body> 
 
