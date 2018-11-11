@@ -61,17 +61,17 @@ border-radius: 3px;
 }
 </style>
 <body>
-   <section id = 'creating'>
+   <section id = 'section'>
       <h3>Creating</h3>
-      <div id= 'c'> content</div>
+      <div id= 'creating'> content</div>
    </section>
-   <section id= 'rtl'>
+   <section id= 'section'>
       <h3>RTL</h3>
-      <div id='r' >content</div>
+      <div id='rtl' >content</div>
    </section>
-   <section id= 'live'> 
+   <section id= 'section'> 
       <h3>Live</h3>
-      <div id= 'l'>content</div>
+      <div id= 'live'>content</div>
    </section>
 <script type="text/javascript">
 
@@ -99,7 +99,7 @@ var loadedActions = function(cards) {
 			var cardName = document.createElement('div');
 			var node1 = document.createTextNode(value.name);
 			cardName.appendChild(node1);
-			iDiv.appendChild(cardName);
+			iDiv.createElement(cardName);
 		}
 	});
 	
