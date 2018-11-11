@@ -14,7 +14,7 @@ body {
   display : flex;
   flex-direction: column;
 }
-#section {
+.section {
   flex : 1;
   background-color:lightyellow;
   position : relative;
@@ -27,6 +27,8 @@ body {
 h3 {
   color : white;
   padding : 10px;
+text-transform : uppercase;
+letter-spacing:2px;
   margin : 0px;
   left : 0;
   bottom : 0;
@@ -37,15 +39,15 @@ h3 {
 
 </style>
 <body>
-   <section id = 'section' >
+   <section class = 'section' >
       <h3>Creating</h3>
       <div id= 'creating'></div>
    </section>
-   <section id= 'section'>
+   <section class= 'section'>
       <h3>RTL</h3>
       <div id='rtl' ></div>
    </section>
-   <section id= 'section'> 
+   <section class= 'section'> 
       <h3>Live</h3>
       <div id= 'live'></div>
    </section>
