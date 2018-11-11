@@ -23,6 +23,12 @@ body {
   border-width : 1px 1px 1px 35px;
   
 }
+.firstCreated {
+  background-color : lightgreen;
+width : 10%
+border : 2px solid black;
+border-radius : 10px;
+}
 
 h3 {
   color : white;
@@ -30,7 +36,9 @@ h3 {
 text-transform : uppercase;
 letter-spacing:2px;
   margin : 0px;
-  left : 0;
+top: 50%
+
+  left : 50%;
   bottom : 0;
  position : absolute;
   transform: rotate(-90deg);
@@ -61,15 +69,15 @@ var loadedActions = function(cards) {
 			
 			case '5b20f1177994c475a10be920': 
 				list = 'creating';
-                                
+                                moo(list);
 				break;
 			case '5b20f138528ff7918365a5b7' : 
 				list = 'rtl';
-				
+				moo(list);
 				break;
 			case '5b20f15424b0c9eafe53aa8b' : 
 				list = 'live';
-			
+				moo(list);
 				break;
 		}
 		function moo(section) {debugger
