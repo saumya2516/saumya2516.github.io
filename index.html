@@ -109,7 +109,7 @@ var loadedActions = function(cards) {
 		function moo(section) {debugger
 		     var iDiv = document.getElementById(section);
 			var cardName = document.createElement('div');
-			cardName.addCls('main');
+			cardName.className = 'main';
 			var divwithname = document.createElement('div');
 			var node1 = document.createTextNode(value.name);
 			divwithname.appendChild(node1);
