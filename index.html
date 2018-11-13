@@ -15,19 +15,36 @@ body {
   flex-direction: column;
 }
 .section {
-  flex : 1;
-  background-color:lightyellow;
+  display : flex;
+  background-color: lightgrey;
   position : relative;
   margin: 2px;
   border-style : solid;
   border-width : 1px 1px 1px 35px;
   
 }
+
+.main {
+  width: 150px;
+  /* Set width of cards */
+  margin: 10px;
+  border: 1px solid #EF9A9A;    /* Set up Border */
+  border-radius: 4px;           /* Slightly Curve edges */
+  overflow: hidden;             /* Fixes the corners */
+  display: flex;                /* Children use Flexbox */
+  flex-direction: column;
+}
+
 .firstCreated {
-  background-color : lightgreen;
-width : 10%
-border : 2px solid black;
-border-radius : 10px;
+    border: 2px solid;
+    background-color: lightcyan;
+    border-radius: 5px;
+    width: 150px;
+    padding: 5px;
+    height: 20px;
+    margin: 10px;
+    text-align: center;
+    overflow: hidden
 }
 
 h3 {
@@ -49,15 +66,24 @@ top: 50%
 <body>
    <section class = 'section' >
       <h3>Creating</h3>
-      <div id= 'creating'></div>
+<div class = 'main'>
+      <div class= 'firstCreated'></div>
+<div class = 'secondCreated'></div>
+</div>
    </section>
    <section class= 'section'>
       <h3>RTL</h3>
-      <div id='rtl' ></div>
+      <div class = 'main'>
+      <div class= 'firstCreated'></div>
+<div class = 'secondCreated'></div>
+</div>
    </section>
    <section class= 'section'> 
       <h3>Live</h3>
-      <div id= 'live'></div>
+      <div class = 'main'>
+      <div class= 'firstCreated'></div>
+<div class = 'secondCreated'></div>
+</div>
    </section>
 <script type="text/javascript">
 
@@ -83,9 +109,12 @@ var loadedActions = function(cards) {
 		function moo(section) {debugger
 		     var iDiv = document.getElementById(section);
 			var cardName = document.createElement('div');
+			cardName.addCls('main');
+			var divwithname = document.createElement('div');
 			var node1 = document.createTextNode(value.name);
-			cardName.appendChild(node1);
-			cardName.className = 'firstCreated';
+			divwithname.appendChild(node1);
+			divwithname.className = 'firstCreated';
+			cardName.appendChild(divwithname);
 			iDiv.appendChild(cardName);
 		}
 	});
