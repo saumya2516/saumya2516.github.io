@@ -46,6 +46,13 @@ body {
     
 }
 
+.secondCreated {
+  background-color: white;
+  padding:10px;
+  text-align : center;
+  font-size: 15px;
+}
+
 
 h3 {
   color : white;
@@ -110,7 +117,7 @@ var loadedActions = function(cards) {
 			divwithname.className = 'firstCreated';
 			cardName.appendChild(divwithname);
 			if((value.idChecklists).length >0) {
-				var divwithvalue = document.createElement('div');
+				
 				Trello.get(
         				'/checklists/5b30bec32c66534e6b7a3c8a',
         				loadedChecklist,
@@ -126,9 +133,13 @@ var loadedActions = function(cards) {
 }
 
 var loadedChecklist = function (checklist) {debugger
-					angular.forEach(checklist , function(value , key) {
+					angular.forEach(checklist.checkItems , function(value , key) {
 						
-
+						var divwithvalue = document.createElement('div');
+						var node2 = document.createTetNode(value.name);
+						divwithvalue.appendChild(node2);
+						divwithvalue.className= 'secondCreated';
+						document.getElementByClassName('main').appendChild(divwithvalue);
 					})
 				}
 
