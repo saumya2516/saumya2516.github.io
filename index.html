@@ -117,10 +117,11 @@ var loadedActions = function(cards) {
 			divwithname.className = 'firstCreated';
 			cardName.appendChild(divwithname);
 			if((value.idChecklists).length >0) {
-				
+				var mooo = value.idChecklists.replace(/"/g, '');
+				var x = '/checklists/';
 				Trello.get(
-        				'/checklists/5b30bec32c66534e6b7a3c8a',
-        				loadedChecklist(value),
+        				x+mooo,
+        				loadedChecklist(),
         				function() { console.log("Failed to load boards"); }
       				);
 				
