@@ -134,12 +134,12 @@ var loadedActions = function(cards) {
 
 var loadedChecklist = function (checklist) {debugger
 					angular.forEach(checklist.checkItems , function(value , key) {
-						
+						var x = document.getElementsByClassName('main');
 						var divwithvalue = document.createElement('div');
 						var node2 = document.createTextNode(value.name);
 						divwithvalue.appendChild(node2);
 						divwithvalue.className= 'secondCreated';
-						document.getElementsByClassName('main').appendChild(divwithvalue);
+						x.appendChild(divwithvalue);
 					})
 				}
 
