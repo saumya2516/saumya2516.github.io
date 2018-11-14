@@ -125,14 +125,7 @@ var loadedActions = function(cards) {
       				);
 				
 			}
-			iDiv.appendChild(cardName);
-		}
-	});
-	
-	
-}
-
-var loadedChecklist = function (checklist) {debugger
+			var loadedChecklist = function (checklist) {debugger
 					angular.forEach(checklist.checkItems , function(value , key) {
 						var x = document.getElementsByClassName('main');
 						var divwithvalue = document.createElement('div');
@@ -142,6 +135,15 @@ var loadedChecklist = function (checklist) {debugger
 						x[0].appendChild(divwithvalue);
 					})
 				}
+			iDiv.appendChild(cardName);
+			
+		}
+	});
+	
+	
+}
+
+
 
 var loadedBoards = function(lists) {
 	angular.forEach(lists , function (value,key) {
