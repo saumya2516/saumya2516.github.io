@@ -136,7 +136,7 @@ var loadedChecklist = function (checklist) {debugger
 					angular.forEach(checklist.checkItems , function(value , key) {
 						
 						var divwithvalue = document.createElement('div');
-						var node2 = document.createTetNode(value.name);
+						var node2 = document.createTextNode(value.name);
 						divwithvalue.appendChild(node2);
 						divwithvalue.className= 'secondCreated';
 						document.getElementByClassName('main').appendChild(divwithvalue);
