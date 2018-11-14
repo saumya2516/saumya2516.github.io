@@ -116,12 +116,7 @@ var loadedActions = function(cards) {
         				loadedChecklist,
         				function() { console.log("Failed to load boards"); }
       				);
-				var loadedChecklist = function (checklist) {debugger
-					angular.forEach(checklist , function(value , key) {
-						
-
-					})
-				}
+				
 			}
 			iDiv.appendChild(cardName);
 		}
@@ -129,6 +124,13 @@ var loadedActions = function(cards) {
 	
 	
 }
+
+var loadedChecklist = function (checklist) {debugger
+					angular.forEach(checklist , function(value , key) {
+						
+
+					})
+				}
 
 var loadedBoards = function(lists) {
 	angular.forEach(lists , function (value,key) {
