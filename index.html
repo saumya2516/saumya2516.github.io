@@ -120,12 +120,21 @@ var loadedActions = function(cards) {
 				
 				Trello.get(
         				'/checklists/5b30bec32c66534e6b7a3c8a',
-        				loadedChecklist,
+        				loadedChecklist(value.checkItems),
         				function() { console.log("Failed to load boards"); }
       				);
 				
 			}
-			var loadedChecklist = function (checklist) {debugger
+			
+			iDiv.appendChild(cardName);
+			
+		}
+	});
+	
+	
+}
+
+var loadedChecklist = function (checklist) {debugger
 					angular.forEach(checklist.checkItems , function(value , key) {
 						var x = document.getElementsByClassName('main');
 						var divwithvalue = document.createElement('div');
@@ -135,14 +144,6 @@ var loadedActions = function(cards) {
 						x[0].appendChild(divwithvalue);
 					})
 				}
-			iDiv.appendChild(cardName);
-			
-		}
-	});
-	
-	
-}
-
 
 
 var loadedBoards = function(lists) {
