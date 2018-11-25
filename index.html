@@ -118,23 +118,24 @@ var loadedActions = function(cards) {
 			
 			iDiv.appendChild(cardName);
 			if((value.idChecklists).length >0) {
-				angular.forEach (value.idChecklists, function (X, key) {
+				angular.forEach (value.idChecklists, function (value, key) {
 					Trello.get(
-			          		'/checklists/value.idChecklists',
+			          		'/checklists/value',
 						loadedChecklists,
 						function () {console.log("Failed to load checklists");}
 					);
 				})
 			}	
 		}
+		function loadedChecklists(checklist) {debugger
+			
+		}
 		
 	});
 	
 }
 
-function loadedChecklists(checklist) {debugger
-			
-}
+
 
 var loadedBoards = function(lists) {
 	angular.forEach(lists , function (value,key) {
