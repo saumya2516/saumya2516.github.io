@@ -119,7 +119,7 @@ var loadedActions = function(cards) {
 			iDiv.appendChild(cardName);
 			if((value.idChecklists).length >0) {
 				angular.forEach (value.idChecklists, function (value, key) {
-					trello.get(
+					Trello.get(
 			          		'/checklists/value',
 						loadedChecklists,
 						function () {console.log("Failed to load checklists");}
