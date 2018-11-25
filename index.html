@@ -116,16 +116,6 @@ var loadedActions = function(cards) {
 			divwithname.appendChild(node1);
 			divwithname.className = 'firstCreated';
 			cardName.appendChild(divwithname);
-			if((value.idChecklists).length >0) {
-				var mooo = value.idChecklists[0].replace(/"/g, '');
-				var x = '/checklists/';
-				Trello.get(
-        				x+mooo,
-        				loadedChecklist(),
-        				function() { console.log("Failed to load boards"); }
-      				);
-				
-			}
 			
 			iDiv.appendChild(cardName);
 			
@@ -135,16 +125,6 @@ var loadedActions = function(cards) {
 	
 }
 
-var loadedChecklist = function (checklist) {debugger
-					angular.forEach(checklist.checkItems , function(value , key) {
-						var x = document.getElementsByClassName('main');
-						var divwithvalue = document.createElement('div');
-						var node2 = document.createTextNode(value.name);
-						divwithvalue.appendChild(node2);
-						divwithvalue.className= 'secondCreated';
-						x[0].appendChild(divwithvalue);
-					})
-				}
 
 
 var loadedBoards = function(lists) {
