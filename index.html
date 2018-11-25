@@ -86,7 +86,7 @@ top: 50%
 </div>
    </section>
 <script type="text/javascript">
-
+var cardName = document.createElement('div');
 var loadedActions = function(cards) {
 	
 	angular.forEach(cards , function (value,key) {
@@ -108,7 +108,7 @@ var loadedActions = function(cards) {
 		}
 		function moo(section) {debugger
 		     	var iDiv = document.getElementById(section);
-			var cardName = document.createElement('div');
+			
 			cardName.className = 'main';
 			var divwithname = document.createElement('div');
 			var node1 = document.createTextNode(value.name);
@@ -136,8 +136,12 @@ var loadedActions = function(cards) {
 }
 
 var loadedChecklists =  function(checklist) {debugger
-			angular.forEach(checklist , function (value, key) {debugger
-				
+			var scopeDiv = document.createElement('div');
+			angular.forEach(checklist.checkItems , function (value, key) {debugger
+				var node2 = document.createTextNode(value.name);
+				scopeDiv.appendChild(node2);
+				scopeDiv.className = 'secondCreated';
+				cardName.appendChild(scopeDiv);
 			})
 		}
 
