@@ -131,8 +131,8 @@ var loadedActions = function(cards) {
 function checking(c) {debugger
 	angular.forEach (c, function (values, key) {debugger
 					
-				coooo(values);
-					
+				p = coooo(values);
+					console.log(p);
 				})
 }
 
@@ -148,10 +148,10 @@ function coooo(r) {
 var loadedChecklists =  function(checklist) {debugger
 			var scopeDiv = document.createElement('div');
 			angular.forEach(checklist.checkItems , function (value, key) {debugger
-				var node2 = document.createTextNode(value.name);
-				scopeDiv.appendChild(node2);
-				scopeDiv.className = 'secondCreated';
-				document.getElementsByClassName('main').appendChild(scopeDiv);
+				return  document.createTextNode(value.name);
+				//scopeDiv.appendChild(node2);
+				//scopeDiv.className = 'secondCreated';
+				//document.getElementsByClassName('main').appendChild(scopeDiv);
 			})
 		}
 
