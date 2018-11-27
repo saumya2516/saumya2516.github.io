@@ -129,7 +129,7 @@ var loadedActions = function(cards) {
 }
 
 function checking(c) {debugger
-	angular.forEach (value.idChecklists, function (values, key) {debugger
+	angular.forEach (c, function (values, key) {debugger
 					var x = '/checklists/';
 					var y = values.replace(/"/g, '');
 					Trello.get(
@@ -140,7 +140,7 @@ function checking(c) {debugger
 				})
 }
 
-/** var loadedChecklists =  function(checklist) {debugger
+var loadedChecklists =  function(checklist) {debugger
 			var scopeDiv = document.createElement('div');
 			angular.forEach(checklist.checkItems , function (value, key) {debugger
 				var node2 = document.createTextNode(value.name);
@@ -148,7 +148,7 @@ function checking(c) {debugger
 				scopeDiv.className = 'secondCreated';
 				cardName.appendChild(scopeDiv);
 			})
-		} **/
+		}
 
 var loadedBoards = function(lists) {
 	angular.forEach(lists , function (value,key) {
