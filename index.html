@@ -130,23 +130,28 @@ var loadedActions = function(cards) {
 
 function checking(c) {debugger
 	angular.forEach (c, function (values, key) {debugger
-					var x = '/checklists/';
-					var y = values.replace(/"/g, '');
-					Trello.get(
-			          		x+y,
-						loadedChecklists,
-						function () {console.log("Failed to load checklists");}
-					);
+					
+					coooo(values);
+					
 				})
 }
 
+function coooo(r) {
+	var x = '/checklists/';
+	var y = r.replace(/"/g, '');
+	Trello.get(
+		x+y,
+		loadedChecklists,
+		function () {console.log("Failed to load checklists");}
+	);
+}
 var loadedChecklists =  function(checklist) {debugger
 			var scopeDiv = document.createElement('div');
 			angular.forEach(checklist.checkItems , function (value, key) {debugger
 				var node2 = document.createTextNode(value.name);
 				scopeDiv.appendChild(node2);
 				scopeDiv.className = 'secondCreated';
-				cardName.appendChild(scopeDiv);
+				getElementsByClassName('main').appendChild(scopeDiv);
 			})
 		}
 
