@@ -139,16 +139,17 @@ function checking(c) {debugger
 function coooo(r) {
 	var x = '/checklists/';
 	var y = r.replace(/"/g, '');
-	Trello.get(
+	var q = Trello.get(
 		x+y,
 		loadedChecklists,
 		function () {console.log("Failed to load checklists");}
 	);
+	console.log(q);
 }
 var loadedChecklists =  function(checklist) {debugger
 			var scopeDiv = document.createElement('div');
 			angular.forEach(checklist.checkItems , function (value, key) {debugger
-				return  document.createTextNode(value.name);
+				return  value.name;
 				//scopeDiv.appendChild(node2);
 				//scopeDiv.className = 'secondCreated';
 				//document.getElementsByClassName('main').appendChild(scopeDiv);
