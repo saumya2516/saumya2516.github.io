@@ -117,8 +117,19 @@ var loadedActions = function(cards) {
 			cardName.appendChild(divwithname);
 			
 			iDiv.appendChild(cardName);
-			/** if((value.idChecklists).length >0) {
-				angular.forEach (value.idChecklists, function (values, key) {debugger
+			 if((value.idChecklists).length >0) {
+				checking(value.idChecklists);
+				
+			} 	
+		}
+		
+		
+	});
+	
+}
+
+function checking(c) {debugger
+	angular.forEach (value.idChecklists, function (values, key) {debugger
 					var x = '/checklists/';
 					var y = values.replace(/"/g, '');
 					Trello.get(
@@ -127,12 +138,6 @@ var loadedActions = function(cards) {
 						function () {console.log("Failed to load checklists");}
 					);
 				})
-			} **/	
-		}
-		
-		
-	});
-	
 }
 
 /** var loadedChecklists =  function(checklist) {debugger
