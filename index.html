@@ -118,8 +118,16 @@ var loadedActions = function(cards) {
 			
 			iDiv.appendChild(cardName);
 			 if((value.idChecklists).length >0) {
-				checking(value.idChecklists);
-				
+				angular.forEach(value.idChecklists , function(value, key) {
+					var x = '/checklists/';
+					var y = value.replace(/"/g, '');
+					Trello.get(
+						x+y,
+						loadedChecklists,
+						function () {console.log("Failed to load checklists");}
+					);
+
+				})
 			} 	
 		}
 		
@@ -128,24 +136,6 @@ var loadedActions = function(cards) {
 	
 }
 
-function checking(c) {debugger
-	angular.forEach (c, function (values, key) {debugger
-					
-				p = coooo(values);
-					console.log(p);
-				})
-}
-
-function coooo(r) {
-	var x = '/checklists/';
-	var y = r.replace(/"/g, '');
-	var q = Trello.get(
-		x+y,
-		loadedChecklists,
-		function () {console.log("Failed to load checklists");}
-	);
-	console.log(q);
-}
 var loadedChecklists =  function(checklist) {debugger
 			var scopeDiv = document.createElement('div');
 			angular.forEach(checklist.checkItems , function (value, key) {debugger
