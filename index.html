@@ -138,9 +138,12 @@ var loadedActions = function(cards) {
 var loadedChecklists =  function(checklist) {
 			var second = document.getElementById(checklist.idCard);
 			var scopeDiv = document.createElement('div');
+			var br = document.createElement("br");
+
 			angular.forEach(checklist.checkItems , function (value, key) {
 				var node2 = document.createTextNode(value.name);
 				scopeDiv.appendChild(node2);
+				scopeDiv.appendChild(br);
 				scopeDiv.className = 'secondCreated';
 				second.appendChild(scopeDiv);
 			});
