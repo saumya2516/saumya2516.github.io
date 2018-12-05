@@ -118,9 +118,9 @@ var loadedActions = function(cards) {
 			
 			iDiv.appendChild(cardName);
 			 if((value.idChecklists).length >0) {
-				angular.forEach(value.idChecklists , function(value, key) {
+				angular.forEach(value.idChecklists , function(values, key) {
 					var x = '/checklists/';
-					var y = value.replace(/"/g, '');
+					var y = values.replace(/"/g, '');
 					Trello.get(
 						x+y,
 						loadedChecklists,
