@@ -129,11 +129,10 @@ var loadedActions = function(cards) {
 				 }
 			}
 			
-		} 	
-		}
-	});
-	
-}
+		}	
+		});
+	}
+
 
 var loadedChecklists =  function(checklist) {
 			var scopeDiv = document.createElement('div');
@@ -142,7 +141,8 @@ var loadedChecklists =  function(checklist) {
 				//scopeDiv.appendChild(node2);
 				//scopeDiv.className = 'secondCreated';
 				//document.getElementsByClassName('main').appendChild(scopeDiv);
-			})
+			});
+}
 
 var loadedBoards = function(lists) {
 	angular.forEach(lists , function (value,key) {
