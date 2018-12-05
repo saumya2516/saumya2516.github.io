@@ -128,21 +128,21 @@ var loadedActions = function(cards) {
 						);
 				 }
 			}
-			var loadedChecklists =  function(checklist) {debugger
-			var scopeDiv = document.createElement('div');
-			angular.forEach(checklist.checkItems , function (value, key) {debugger
-				return  value.name;
-				//scopeDiv.appendChild(node2);
-				//scopeDiv.className = 'secondCreated';
-				//document.getElementsByClassName('main').appendChild(scopeDiv);
-			})
+			
 		} 	
 		}
 	});
 	
 }
 
-
+var loadedChecklists =  function(checklist) {
+			var scopeDiv = document.createElement('div');
+			angular.forEach(checklist.checkItems , function (value, key) {
+				console.log ( value.name);
+				//scopeDiv.appendChild(node2);
+				//scopeDiv.className = 'secondCreated';
+				//document.getElementsByClassName('main').appendChild(scopeDiv);
+			})
 
 var loadedBoards = function(lists) {
 	angular.forEach(lists , function (value,key) {
