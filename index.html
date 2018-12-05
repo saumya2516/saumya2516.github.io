@@ -142,8 +142,8 @@ var loadedChecklists =  function(checklist) {
 
 			angular.forEach(checklist.checkItems , function (value, key) {
 				var node2 = document.createTextNode(value.name);
-				scopeDiv.appendChild(node2);
 				scopeDiv.appendChild(br);
+				scopeDiv.appendChild(node2);
 				scopeDiv.className = 'secondCreated';
 				second.appendChild(scopeDiv);
 			});
