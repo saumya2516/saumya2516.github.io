@@ -106,10 +106,11 @@ var loadedActions = function(cards) {
 				moo(list);
 				break;
 		}
-		function moo(section) {debugger
-		     	var iDiv = document.getElementById(section);
+		function moo(section) {
+		    var iDiv = document.getElementById(section);
 			var cardName = document.createElement('div');
 			cardName.className = 'main';
+			cardName.Id = value.id;
 			var divwithname = document.createElement('div');
 			var node1 = document.createTextNode(value.name);
 			divwithname.appendChild(node1);
@@ -135,12 +136,13 @@ var loadedActions = function(cards) {
 
 
 var loadedChecklists =  function(checklist) {
+			var second = document.getElementById(checklist.idCard);
 			var scopeDiv = document.createElement('div');
 			angular.forEach(checklist.checkItems , function (value, key) {
-				console.log ( value.name);
-				//scopeDiv.appendChild(node2);
-				//scopeDiv.className = 'secondCreated';
-				//document.getElementsByClassName('main').appendChild(scopeDiv);
+				var node2 = document.createTextNode(value.name);
+				scopeDiv.appendChild(node2);
+				scopeDiv.className = 'secondCreated';
+				second.appendChild(scopeDiv);
 			});
 }
 
