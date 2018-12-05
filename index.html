@@ -127,13 +127,8 @@ var loadedActions = function(cards) {
 							function () {console.log("Failed to load checklists");}
 						);
 				 }
-			} 	
-		}
-	});
-	
-}
-
-var loadedChecklists =  function(checklist) {debugger
+			}
+			var loadedChecklists =  function(checklist) {debugger
 			var scopeDiv = document.createElement('div');
 			angular.forEach(checklist.checkItems , function (value, key) {debugger
 				return  value.name;
@@ -141,7 +136,13 @@ var loadedChecklists =  function(checklist) {debugger
 				//scopeDiv.className = 'secondCreated';
 				//document.getElementsByClassName('main').appendChild(scopeDiv);
 			})
+		} 	
 		}
+	});
+	
+}
+
+
 
 var loadedBoards = function(lists) {
 	angular.forEach(lists , function (value,key) {
